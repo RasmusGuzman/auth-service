@@ -27,6 +27,9 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
     Создает JWT-токен с указанным сроком действия.
     """
     to_encode = data.copy()
+    if to_encode.get("sub") is not str:
+        to_encode.update({"sub": str(to_encode["sub"])})
+
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
     else:

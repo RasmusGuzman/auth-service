@@ -4,6 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 import os
 
+
 # Загружаем переменные окружения
 load_dotenv()
 
@@ -20,7 +21,7 @@ async def send_reset_password_email(email: str, reset_token: str, reset_url: str
 
         # Формируем сообщение
         message = MIMEMultipart()
-        message['From'] = "support@example.com"
+        message['From'] = "johnywalker1990@yandex.ru"
         message['To'] = email
         message['Subject'] = "Сброс пароля"
 
